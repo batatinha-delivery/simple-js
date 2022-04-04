@@ -26,6 +26,14 @@ jobs:
         working-directory: ./website
         run: yarn build
 
+      - name: Cache Build
+        uses: actions/cache@v3
+        with:
+          path: |
+            ./lib
+            ./example/build
+          key: build-${{ github.sha }}
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
