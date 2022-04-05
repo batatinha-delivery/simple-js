@@ -3,6 +3,11 @@ name: Deploy Site
 on:
   workflow_dispatch:
     branches: [main]
+  workflow_run:
+    workflows: ['Release']
+    branches: [main]
+    types: 
+      - completed
 
 jobs:
   deploy-site:

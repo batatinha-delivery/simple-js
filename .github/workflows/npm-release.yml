@@ -1,0 +1,23 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    branches: [main]
+    inputs:
+      bump_type:
+        description: 'Bump type'     
+        required: true
+        default: 'minor' 
+        type: choice
+        options:
+        - patch
+        - minor
+        - major
+
+jobs:
+  release:
+    uses: batatinha-delivery/workflows/.github/workflows/npm_publish.yml@master
+    secrets:
+      NPM_DEPLOY_TOKEN: ${{ secrets.NPM_DEPLOY_TOKEN }}
+    with:
+      bump_type: ${{ inputs.bump_type }}
