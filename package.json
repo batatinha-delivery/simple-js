@@ -2,10 +2,12 @@
   "name": "@batatinha-delivery/simple",
   "version": "1.5.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "release": "release-it --ci"
+    "release": "release-it --ci",
+    "format:check": "prettier \"src/*.+(ts|tsx|css|js)\"",
+    "build": "echo \"Error: no build specified\""
   },
   "publishConfig": {
     "access": "public",
@@ -23,6 +25,7 @@
   "homepage": "https://github.com/batatinha-delivery/simple-js#readme",
   "devDependencies": {
     "@release-it/conventional-changelog": "^4.2.0",
-    "release-it": "^14.12.5"
+    "release-it": "^14.12.5",
+    "prettier": "2.5.1"
   }
 }
