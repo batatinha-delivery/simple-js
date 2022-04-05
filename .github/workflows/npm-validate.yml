@@ -1,0 +1,14 @@
+name: Validate
+
+on:
+  workflow_call:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+    branches:
+      - 'main'
+
+jobs:
+  release:
+    uses: batatinha-delivery/workflows/.github/workflows/npm_validate.yml@master
