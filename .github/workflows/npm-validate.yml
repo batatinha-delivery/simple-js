@@ -10,5 +10,7 @@ on:
       - 'main'
 
 jobs:
-  release:
+  validate_project:
     uses: batatinha-delivery/workflows/.github/workflows/npm_validate.yml@master
+  validate_site:
+    uses: batatinha-delivery/workflows/.github/workflows/site_validate.yml@master
