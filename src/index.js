@@ -1,1 +1,1 @@
-console.log("Example app");
+console.log("Example app - a new feature");
